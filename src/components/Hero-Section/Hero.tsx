@@ -11,11 +11,11 @@ const Intro = () => {
 
         <div className="text-lg space-y-3 ">
           <p>
-            Junior React Developer with a strong focus on frontend, full-stack
-            by passion.
+            Junior React Developer with a strong focus on frontend, excited by
+            full-stack.
           </p>
           <p>
-            My skills are hands‑on and project‑based. <br /> I aim to build real
+            My skills are hands-on and project-based. <br /> I aim to build real
             products in a startup environment and keep growing.
           </p>
         </div>
@@ -36,7 +36,7 @@ export const Hero = () => {
   return (
     <section className="hero-wrapper">
       <Intro />
-      <div className="min-w-1/5 max-w-1/3">
+      <div className="min-w-1/5 max-w-1/4">
         <img
           className="bg-red-500 rounded-lg"
           src="../Cheik_SocialMedia.jpg"
