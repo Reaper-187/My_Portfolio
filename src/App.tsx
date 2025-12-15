@@ -1,7 +1,10 @@
 import "./App.css";
+import { Portfolio } from "./Page/Portfolio";
 
-function App() {
-  return <></>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <>
+      <Portfolio />
+    </>
+  );
+};

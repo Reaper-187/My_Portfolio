@@ -116,6 +116,8 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    background-color: var(--foreground);
+    font-family: "inter", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
