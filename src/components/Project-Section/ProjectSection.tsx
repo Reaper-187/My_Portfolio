@@ -1,27 +1,46 @@
-import { TestTubeDiagonal, type LucideProps } from "lucide-react";
+import "./Project.sass";
+import { Github, TestTubeDiagonal, type LucideProps } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
+import moneytrackerDark from "../../assets/moneytracker_imgs/moneytracker_dark.png";
+import kanbanDark from "../../assets/kanban_imgs/kanban_dark.png";
+import chatDark from "../../assets/chat_imgs/chat_dark.png";
 
 interface ProjectInfoProps {
   title: string;
-  img: string;
+  dark_img?: string;
   description: string;
   testDemo: React.ComponentType<LucideProps>;
   techStack: string[];
+  demoLink: string;
+  source: string;
 }
 
 interface TechStackProps {
   stack: string[];
 }
 
+export enum Tech {
+  React = "React.js",
+  Node = "Node.js",
+  Express = "express.js",
+  Mongo = "Mongo-DB",
+  Rest = "Rest-API",
+  Socket = "Socket.io",
+  TS = "TypeScript",
+  Tailwind = "TailwindCss",
+}
+
 export const TechStack = ({ stack }: TechStackProps) => {
   const colors: Record<string, string> = {
-    React: "text-blue-800 bg-blue-300",
-    "Node.js": "text-green-800 bg-green-300",
-    MongoDB: "text-green-900 bg-green-200",
-    "Rest-API": "text-black bg-white",
-    "Socket.io": "text-purple-800 bg-purple-300",
-    TypeScript: "text-blue-900 bg-blue-200",
+    "React.js": "text-blue-400 border border-blue-400",
+    "Node.js": "text-green-300 border border-green-300",
+    "Rest-API": "text-white border border-white",
+    "Mongo-DB": "text-green-500 border border-green-500",
+    "Socket.io": "text-indigo-400 border border-indigo-300",
+    TypeScript: "text-blue-600 border border-blue-600",
+    TailwindCss: "text-blue-300 border border-blue-300",
+    "express.js": "text-yellow-300 border border-yellow-300",
   };
 
   return (
@@ -29,7 +48,9 @@ export const TechStack = ({ stack }: TechStackProps) => {
       {stack.map((tech) => (
         <p
           key={tech}
-          className={`p-1 rounded-md ${colors[tech] || "bg-gray-200"}`}
+          className={`p-1 text-sm rounded-md ${
+            colors[tech] || "border border-gray-200"
+          }`}
         >
           {tech}
         </p>
@@ -41,36 +62,67 @@ export const TechStack = ({ stack }: TechStackProps) => {
 const projectInfos: ProjectInfoProps[] = [
   {
     title: "MoneyTracker",
-    img: "url",
+    dark_img: moneytrackerDark,
     description: "Managing in/outcome in a visuall way",
     testDemo: TestTubeDiagonal,
-    techStack: ["React", "Node.js", "MongoDB", "Rest-API"],
+    techStack: [
+      Tech.React,
+      Tech.Node,
+      Tech.Express,
+      Tech.Rest,
+      Tech.Mongo,
+      Tech.Tailwind,
+    ],
+    demoLink: "url",
+    source: "url",
   },
   {
     title: "Chat-App",
-    img: "url",
+    dark_img: chatDark,
     description: "Chatting with friend/colleagues",
     testDemo: TestTubeDiagonal,
-    techStack: ["React", "Node.js", "MongoDB", "Rest-API", "Socket.io"],
+    techStack: [
+      Tech.React,
+      Tech.Node,
+      Tech.Express,
+      Tech.Rest,
+      Tech.Mongo,
+      Tech.Socket,
+      Tech.Tailwind,
+    ],
+    demoLink: "url",
+    source: "url",
   },
   {
     title: "Kanban-Board",
-    img: "url",
+    dark_img: kanbanDark,
     description: "Managing Tasks with your Team",
     testDemo: TestTubeDiagonal,
-    techStack: ["React", "Node.js", "MongoDB", "Rest-API", "TypeScript"],
+    techStack: [
+      Tech.React,
+      Tech.Node,
+      Tech.Express,
+      Tech.Rest,
+      Tech.Tailwind,
+      Tech.Mongo,
+      Tech.TS,
+    ],
+    demoLink: "url",
+    source: "url",
   },
 ];
 
 export const ProjectSection = () => {
   return (
-    <>
+    <div className="project-list">
       {projectInfos.map((project) => (
-        <Card
-          className="bg-transparent w-1/2 space-y-5 p-2"
-          key={project.title}
-        >
-          <img src={project.img} alt="Project-Image" />
+        <Card className="bg-transparent space-y-5 p-2" key={project.title}>
+          <img
+            src={project.dark_img}
+            alt="Project-Image"
+            className="project-img"
+          />
+
           <div className="space-y-5">
             <h1>{project.title}</h1>
 
@@ -81,13 +133,21 @@ export const ProjectSection = () => {
             <div className="flex gap-3">
               <Button className="flex items-center gap-3">
                 Live Demo
-                <project.testDemo />
+                <project.testDemo style={{ backgroundColor: "unset" }} />
               </Button>
-              <Button>Source</Button>
+              <Button asChild>
+                <a
+                  href={project.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github /> Source
+                </a>
+              </Button>
             </div>
           </div>
         </Card>
       ))}
-    </>
+    </div>
   );
 };

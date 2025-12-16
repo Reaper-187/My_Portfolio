@@ -6,10 +6,10 @@ import { Button } from "../ui/button";
 const Intro = () => {
   return (
     <div>
-      <div className="text-popover space-y-5">
+      <div className="text-popover space-y-10">
         <h1 className="text-5xl font-[calistoga]">hi Abdul here. 👋</h1>
 
-        <div className="text-lg space-y-3 ">
+        <div className="text-lg space-y-10">
           <p>
             Junior React Developer with a strong focus on frontend, excited by
             full-stack.
@@ -20,7 +20,7 @@ const Intro = () => {
           </p>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-5">
           <Button className="cursor-pointer">
             Resumé
             <FileDown />
@@ -36,7 +36,7 @@ export const Hero = () => {
   return (
     <section className="hero-wrapper">
       <Intro />
-      <div className="min-w-1/5 max-w-1/4">
+      <div className="min-w-1/6 max-w-1/5">
         <img
           className="bg-red-500 rounded-lg"
           src="../Cheik_SocialMedia.jpg"
