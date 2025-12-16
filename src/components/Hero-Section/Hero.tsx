@@ -2,6 +2,7 @@ import { FileDown } from "lucide-react";
 import { SocialMedia } from "../social-media/SocialMedia";
 import "./Hero.sass";
 import { Button } from "../ui/button";
+import socialMediaImg from "../../assets/Cheik_SocialMedia.jpg";
 
 const Intro = () => {
   return (
@@ -36,10 +37,10 @@ export const Hero = () => {
   return (
     <section className="hero-wrapper">
       <Intro />
-      <div className="min-w-1/6 max-w-1/5">
+      <div className="min-w-1/7 max-w-1/6">
         <img
           className="bg-red-500 rounded-lg"
-          src="../Cheik_SocialMedia.jpg"
+          src={socialMediaImg}
           alt="Profile-Img"
         />
       </div>
