@@ -33,15 +33,15 @@ interface TechStackIconProps {
   stack: TechIcon[];
 }
 
-export const TechStackIcon: React.FC<TechStackIconProps> = ({ stack }) => {
+export const TechStackIcon = ({ stack }: TechStackIconProps) => {
   return (
-    <div className="grid grid-cols-3 gap-5 w-3/4">
+    <div className="flex gap-4 flex-wrap p-3 md:p-0">
       {stack.map((tech) => (
         <img
           key={tech}
           src={iconMap[tech]}
           alt={tech}
-          className="bg-primary-foreground rounded-md p-1"
+          className="w-15 h-15 md:w-18 md:h-18 p-1 rounded-md bg-primary-foreground"
         />
       ))}
     </div>

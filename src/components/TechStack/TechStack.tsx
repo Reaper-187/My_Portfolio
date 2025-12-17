@@ -30,7 +30,7 @@ export const TechStack = ({ stack }: TechStackProps) => {
       {stack.map((tech) => (
         <p
           key={tech}
-          className={`p-1 text-sm rounded-md ${
+          className={`p-1 text-xs rounded-md ${
             colors[tech] || "border border-gray-200"
           }`}
         >

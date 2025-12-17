@@ -1,3 +1,4 @@
+import { AboutMe } from "@/components/About-Me/AboutMe";
 import { Hero } from "@/components/Hero-Section/Hero";
 import { Navbar } from "@/components/Portfolio_Header/Navbar";
 import { ProjectSection } from "@/components/Project-Section/ProjectSection";
@@ -9,6 +10,7 @@ export const Portfolio = () => {
       <Navbar />
       <Hero />
       <ProjectSection />
+      <AboutMe />
       <SkillSection />
     </>
   );

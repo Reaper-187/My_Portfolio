@@ -1,13 +1,32 @@
 .skill-container
-  width: 80%
+  background-color: unset
+  border: none
+
+.skill-split
+  position: relative
   display: flex
-  flex-direction: row
-  justify-self: center
-  background-color: transparent
-  padding: 1rem
-  h1
-    font-size: 2rem
-    font-weight: 100
-  p
-    width: 70%
-    font-size: 1.2rem
+  justify-content: center
+  align-items: center
+  gap: 5rem
+  @media (max-width: 640px)
+    display: block
+    justify-items: center
+
+  .divider
+    position: absolute
+    right: 45%
+    top: 10%
+    width: 2px
+    height: 150px
+    background: rgba(255,255,255,0.2)
+    @media (max-width: 640px)
+      display: none
+
+h3
+  font-size: 1.5rem
+  margin:
+    bottom: 1rem
+
+  @media (max-width: 640px)
+    padding: 0 1rem
+    text-align: center
