@@ -1,22 +1,21 @@
-
-.form-wrapper
-  background-color: unset
-  padding: 1rem
-  border: none
-  box-shadow: 0px 0px 4px 0px #ffffff
-  .from-inputs
-    display: flex
-    justify-content: space-between
-
-  .input-fields
+.contact-container
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  @media (max-width: 768px)
+    padding: 1rem
+    flex-direction: column
+.personal-info
+  .info-card
+    background-color: unset
     border: none
-    box-shadow: 0px 0px 3px 0px #ffffff
+    box-shadow: 0px 0px 2px 0px #ffffff
+    padding: 1rem
+    transition: transform ease-in-out .3s
+    &:hover
+      transform: translateY(-5px)
 
-.submit-btn
-  border: none
-  box-shadow: 0px 0px 3px 0px #ffffff
-  transition: all ease .2s
-  &:hover
-    background-color: oklch(0.51 0.23 277)
-    cursor: pointer
-    font-size: medium
+    p
+      font-size: medium
+      @media (max-width: 1024px)
+        font-size: small

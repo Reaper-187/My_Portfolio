@@ -9,7 +9,7 @@ export const SocialMedia = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Linkedin />
+        <Linkedin color="#4F46E5" />
       </a>
       <a
         className="cursor-pointer"
@@ -17,10 +17,10 @@ export const SocialMedia = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Github />
+        <Github color="#4F46E5" />
       </a>
       <a className="cursor-pointer" href="mailto:abdulkader_cheik@outlook.de">
-        <Mail />
+        <Mail color="#4F46E5" />
       </a>
     </div>
   );
