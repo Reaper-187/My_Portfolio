@@ -1,5 +1,6 @@
 import { AboutMe } from "@/components/About-Me/AboutMe";
 import { ContactSection } from "@/components/Contact-Section/ContactSection";
+import { FooterSection } from "@/components/Footer-Section/FooterSection";
 import { Hero } from "@/components/Hero-Section/Hero";
 import { Navbar } from "@/components/Portfolio_Header/Navbar";
 import { ProjectSection } from "@/components/Project-Section/ProjectSection";
@@ -14,6 +15,7 @@ export const Portfolio = () => {
       <AboutMe />
       <SkillSection />
       <ContactSection />
+      <FooterSection />
     </>
   );
 };

@@ -1,0 +1,40 @@
+
+.footer-wrapper
+  display: flex
+  justify-content: space-around
+  align-items: center
+  @media (max-width: 640px)
+    flex-direction: column
+
+.footer-socials
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  margin: 2rem 0
+  text-align: center
+
+.link-wrapper
+  @media (max-width: 640px)
+    display: flex
+    gap: 1rem
+    .link-label
+      display: none
+
+.divider
+  width: 90%
+  height: 1px
+  margin: 4rem auto
+  background: rgba(255,255,255,0.2)
+  @media (max-width: 640px)
+    display: none
+
+.signature
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 2rem
+  @media (max-width: 640px)
+    font-size: small
+    button
+      font-size: small
