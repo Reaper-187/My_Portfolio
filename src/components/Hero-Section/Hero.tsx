@@ -6,12 +6,12 @@ import "./Hero.sass";
 
 const Intro = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-3 md:space-y-10">
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-[calistoga]">
         hi Abdul here. 👋
       </h1>
 
-      <div className="text-sm md:text-base lg:text-lg space-y-10">
+      <div className="space-y-5 text-sm md:text-base lg:text-lg lg:space-y-10">
         <p>
           Junior React Developer with a strong focus on frontend, excited by
           full-stack.
@@ -23,7 +23,7 @@ const Intro = () => {
       </div>
 
       <div className="flex gap-5">
-        <Button className="cursor-pointer">
+        <Button className="cursor-pointer transition duration-300 hover:scale-[1.1]">
           Resumé
           <FileDown />
         </Button>

@@ -1,27 +1,41 @@
-.navbar 
+.navbar
   display: flex
   align-items: center
-  backdrop-filter: 50px
-  color: #fff
-  padding: 2rem 1rem
-
-.navbar-center
-  display: flex
-  justify-self: center
-  width: 100%
   justify-content: center
+  padding: 3rem
 
-
-.navbar-center .nav-links
+.nav-links
+  background-color: rgba(255, 255, 255, 0.062)
+  backdrop-filter: blur(10px)
+  padding: 1rem
+  position: fixed
+  border-radius: 30px
+  box-shadow: 0px 0px 10px 0px #ffffff
   display: flex
-  gap: 2rem
+  gap: 3rem
+  list-style: none
+  @media (max-width: 425px)
+    gap: 1rem
+    font-size: small
+  li
+    background-color: unset
 
-  li a
-    padding: .5em
-    backdrop-filter: 0
-    border-radius: 10px
-    transition: all ease .3s
+    a
+      position: relative
+      background-color: unset
+      transition: color .3s ease
+      padding: 5px 0
 
-.navbar-center .nav-links li a:hover
-  background-color: grey
-  backdrop-filter: 10px
+      &::after
+        content: ''
+        position: absolute
+        width: 0
+        height: 2px
+        background-color: white
+        bottom: 0
+        left: 50%
+        transition: all .3s ease
+
+      &:hover::after
+        width: 100%
+        left: 0
