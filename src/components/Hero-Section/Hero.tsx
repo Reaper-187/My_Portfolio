@@ -6,7 +6,7 @@ import "./Hero.sass";
 
 const Intro = () => {
   return (
-    <div className="space-y-3 md:space-y-10">
+    <div className="intro-container space-y-3 md:space-y-10">
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-[calistoga]">
         hi Abdul here. 👋
       </h1>
