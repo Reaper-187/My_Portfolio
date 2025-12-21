@@ -6,6 +6,7 @@ import moneytrackerDark from "../../assets/moneytracker_imgs/moneytracker_dark.p
 import kanbanDark from "../../assets/kanban_imgs/kanban_dark.png";
 import chatDark from "../../assets/chat_imgs/chat_dark.png";
 import { Tech, TechStack } from "../TechStack/TechStack";
+import { useInView } from "react-intersection-observer";
 
 interface ProjectInfoProps {
   title: string;
@@ -71,43 +72,58 @@ const projectInfos: ProjectInfoProps[] = [
 ];
 
 export const ProjectSection = () => {
+  const { ref: animaRef, inView: cardsVisible } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   return (
     <div className="project-list">
       <h1>projects</h1>
-      <div className="project-wrapper">
-        {projectInfos.map((project) => (
-          <Card className="bg-transparent space-y-5 p-2 " key={project.title}>
-            <img
-              src={project.dark_img}
-              alt="Project-Image"
-              className="project-img"
-            />
+      <div className="project-wrapper" ref={animaRef}>
+        {projectInfos.map((project, index) => {
+          const delay = index * 0.3;
+          return (
+            <Card
+              className={`bg-transparent space-y-5 p-2 opacity-0  ${
+                cardsVisible ? `is-visible` : ""
+              }`}
+              style={{ "--delay": `${delay}s` } as React.CSSProperties}
+              key={project.title}
+            >
+              <img
+                src={project.dark_img}
+                alt="Project-Image"
+                className="project-img"
+                loading="lazy"
+              />
 
-            <div className="space-y-5">
-              <h3>{project.title}</h3>
+              <div className="space-y-5">
+                <h3>{project.title}</h3>
 
-              <p>{project.description}</p>
+                <p>{project.description}</p>
 
-              <TechStack stack={project.techStack} />
+                <TechStack stack={project.techStack} />
 
-              <div className="flex gap-3">
-                <Button className="flex items-center gap-3">
-                  Live Demo
-                  <project.testDemo style={{ backgroundColor: "unset" }} />
-                </Button>
-                <Button asChild>
-                  <a
-                    href={project.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github style={{ backgroundColor: "unset" }} /> Source
-                  </a>
-                </Button>
+                <div className="flex gap-3">
+                  <Button className="flex items-center gap-3">
+                    Live Demo
+                    <project.testDemo style={{ backgroundColor: "unset" }} />
+                  </Button>
+                  <Button asChild>
+                    <a
+                      href={project.source}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github style={{ backgroundColor: "unset" }} /> Source
+                    </a>
+                  </Button>
+                </div>
               </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          );
+        })}
       </div>
     </div>
   );

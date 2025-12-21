@@ -6,6 +6,8 @@ import express from "@/assets/dev_icons/express.svg";
 import tailwind from "@/assets/dev_icons/tailwind.svg";
 import sass from "@/assets/dev_icons/sass.svg";
 import ts from "@/assets/dev_icons/ts.svg";
+import { useInView } from "react-intersection-observer";
+import "./TechIcon.sass";
 
 export enum TechIcon {
   JS = "js",
@@ -34,16 +36,26 @@ interface TechStackIconProps {
 }
 
 export const TechStackIcon = ({ stack }: TechStackIconProps) => {
+  const { ref: animaRef, inView: iconsVisible } = useInView({
+    threshold: 0.5,
+  });
+
   return (
-    <div className="flex gap-4 flex-wrap p-3 md:p-0">
-      {stack.map((tech) => (
-        <img
-          key={tech}
-          src={iconMap[tech]}
-          alt={tech}
-          className="w-15 h-15 md:w-18 md:h-18 p-1 rounded-md bg-primary-foreground"
-        />
-      ))}
+    <div className="flex gap-4 flex-wrap p-3 md:p-0" ref={animaRef}>
+      {stack.map((tech, index) => {
+        const delay = index * 0.3;
+        return (
+          <img
+            key={index}
+            src={iconMap[tech]}
+            alt={tech}
+            className={`w-15 h-15 md:w-18 md:h-18 p-1 rounded-md bg-primary-foreground icon-img opacity-0 ${
+              iconsVisible ? "icons-visible" : ""
+            }`}
+            style={{ "--delay": `${delay}s` } as React.CSSProperties}
+          />
+        );
+      })}
     </div>
   );
 };

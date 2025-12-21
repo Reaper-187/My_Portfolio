@@ -1,4 +1,7 @@
-import { TechIcon, TechStackIcon } from "../TechStack/TechStackIcon";
+import {
+  TechIcon,
+  TechStackIcon,
+} from "../TechStack/TechStackIcon/TechStackIcon";
 import { Card } from "../ui/card";
 import "./Skills.sass";
 

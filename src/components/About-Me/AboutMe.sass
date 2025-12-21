@@ -14,10 +14,20 @@
   h1
     font-size: 2rem
     text-align: center
-  p
+  .about-me-text
     font-size: 1.2rem
+    animation: fade-right .5s forwards
+    animation-delay: var(--delay)
     @media (max-width: 1024px)
       font-size: larger
 
     @media (max-width: 640px)
       font-size: large
+
+@keyframes fade-right
+  0%
+    transform: translateX(20px)
+    opacity: 0
+  100%
+    transform: translateX(0px)
+    opacity: 1

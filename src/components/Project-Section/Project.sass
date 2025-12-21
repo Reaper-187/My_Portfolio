@@ -1,6 +1,6 @@
 .project-list
   width: 70%
-  margin: 10rem auto
+  margin: 20rem auto
   @media (max-width: 1024px)
     width: 90%
   h1
@@ -34,3 +34,16 @@
 .project-img
   border-radius: 10px
   height: 100%
+
+.is-visible
+  animation: isVisible .8s forwards
+  transition: ease-in
+  animation-delay: var(--delay)
+
+@keyframes isVisible
+  0%
+    transform: translateY(50px)
+    opacity: 0
+  100%
+    transform: translateY(0px)
+    opacity: 1
