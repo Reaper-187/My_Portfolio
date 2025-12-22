@@ -50,7 +50,7 @@ export const TechStackIcon = ({ stack }: TechStackIconProps) => {
               key={index}
               src={iconMap[tech]}
               alt={tech}
-              className={`w-15 h-15 md:w-18 md:h-18 p-1 rounded-md bg-primary-foreground icon-img`}
+              className={`w-15 h-15 md:w-15 md:h-15 lg:w-18 lg:h-18 p-1 rounded-md bg-primary-foreground icon-img`}
             />
           </InViewWrapper>
         );

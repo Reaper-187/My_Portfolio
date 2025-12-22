@@ -5,16 +5,16 @@ export const Navbar = () => {
     <nav className="navbar">
       <ul className="nav-links">
         <li>
-          <a href="/">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
-          <a href="/about">About Me</a>
+          <a href="#projects">projects</a>
         </li>
         <li>
-          <a href="/projects">projects</a>
+          <a href="#about-me">About Me</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>

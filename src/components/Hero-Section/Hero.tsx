@@ -35,7 +35,7 @@ const Intro = () => {
 
 export const Hero = () => {
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" id="home">
       <Intro />
       <div className="hero-image">
         <img src={socialMediaImg} alt="Profile-Img" />

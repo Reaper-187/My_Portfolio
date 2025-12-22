@@ -19,7 +19,7 @@ const aboutMeText = [
 
 export const AboutMe = () => {
   return (
-    <Card className="about-me-wrapper">
+    <Card className="about-me-wrapper" id="about-me">
       <h1>About Me :</h1>
       {aboutMeText.map((text, index) => {
         const delayTime = index * 0.3;

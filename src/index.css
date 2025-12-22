@@ -119,6 +119,7 @@
     background-color: var(--foreground);
     font-family: "inter", sans-serif;
     color: var(--primary-foreground);
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;

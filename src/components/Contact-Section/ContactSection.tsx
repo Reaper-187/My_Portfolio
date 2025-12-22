@@ -7,7 +7,7 @@ import "./Contact.sass";
 
 export const ContactSection = () => {
   return (
-    <div className="contact-container space-y-5">
+    <div className="contact-container space-y-5" id="contact">
       <div className="personal-info w-full md:max-w-1/2 lg:w-1/4 space-y-5">
         <h3>Contact information</h3>
         <InViewWrapper

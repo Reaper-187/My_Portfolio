@@ -73,7 +73,7 @@ const projectInfos: ProjectInfoProps[] = [
 
 export const ProjectSection = () => {
   return (
-    <div className="project-list">
+    <div className="project-list" id="projects">
       <h1>projects</h1>
       <div className="project-wrapper">
         {projectInfos.map((project, index) => {

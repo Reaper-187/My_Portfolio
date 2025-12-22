@@ -18,25 +18,25 @@ export const FooterSection = () => {
         <ul className="link-wrapper space-y-3">
           <Label className="link-label">Quick Links :</Label>
           <li>
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#about-me">About</a>
             Me
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
       <div className="divider" />
       <div className="signature">
-        <p>©️ 2025 Abdulkader Cheikhkamis</p>
-        <Button>
-          back to the Top <ArrowUpCircle />
+        <p className="text-white/30">©️ 2025 Abdulkader Cheikhkamis</p>
+        <Button onClick={() => window.scrollTo(0, 0)}>
+          back to Top <ArrowUpCircle />
         </Button>
       </div>
     </div>
