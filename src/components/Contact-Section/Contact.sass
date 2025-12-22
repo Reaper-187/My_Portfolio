@@ -19,3 +19,32 @@
       font-size: medium
       @media (max-width: 1024px)
         font-size: small
+
+.personal-info-cards
+  animation: fade-in .5s forwards
+  animation-delay: var(--delay)
+  width: 100%
+  transition: ease-in
+  > *
+    margin: 1rem 0
+
+@keyframes fade-in
+  0%
+    transform: translateX(50px)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+.contact-form
+  animation: fade-in .5s forwards
+  animation-delay: var(--delay)
+  transition: ease-in
+
+@keyframes fade-in
+  0%
+    transform: translateX(50px)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1

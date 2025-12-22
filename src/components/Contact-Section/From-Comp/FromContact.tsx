@@ -25,7 +25,7 @@ const FormFields = z.object({
 
 type UserForm = z.infer<typeof FormFields>;
 
-export const FromContact = () => {
+export const FormContact = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const {
@@ -60,12 +60,9 @@ export const FromContact = () => {
   };
 
   return (
-    <form
-      className="flex flex-col w-full md:w-2/4"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="flex flex-col w-full" onSubmit={handleSubmit(onSubmit)}>
       <Card className="form-wrapper space-y-10">
-        <div className="from-inputs grid grid-cols-2 space-x-5">
+        <div className="form-inputs grid grid-cols-2 space-x-5">
           <div className="space-y-2">
             <Label>Full Name *</Label>
             <Input

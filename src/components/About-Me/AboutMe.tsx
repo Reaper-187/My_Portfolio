@@ -1,5 +1,5 @@
-import { useInView } from "react-intersection-observer";
 import { Card } from "../ui/card";
+import { InViewWrapper } from "../Animations/InViewWrapper";
 import "./AboutMe.sass";
 
 const aboutMeText = [
@@ -18,23 +18,19 @@ const aboutMeText = [
 ];
 
 export const AboutMe = () => {
-  const { ref: animaRef, inView: aboutMeVisible } = useInView({
-    threshold: 1,
-  });
-
   return (
-    <Card ref={animaRef} className="about-me-wrapper">
+    <Card className="about-me-wrapper">
       <h1>About Me :</h1>
       {aboutMeText.map((text, index) => {
-        const delay = index * 0.3;
+        const delayTime = index * 0.3;
         return (
-          <p
-            className={`opacity-0 ${aboutMeVisible ? "about-me-text" : ""}`}
-            style={{ "--delay": `${delay}s` } as React.CSSProperties}
-            key={index}
+          <InViewWrapper
+            delay={delayTime}
+            addClassName="about-me-text"
+            threshHold={1}
           >
-            {text.phrase}
-          </p>
+            <p key={index}>{text.phrase}</p>
+          </InViewWrapper>
         );
       })}
     </Card>
