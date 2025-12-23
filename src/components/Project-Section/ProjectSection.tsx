@@ -6,6 +6,7 @@ import kanbanDark from "@/assets/kanban_imgs/kanban_dark.png";
 import chatDark from "@/assets/chat_imgs/chat_dark.png";
 import { Tech, TechStack } from "../TechStack/TechStack";
 import { InViewWrapper } from "../Animations/InViewWrapper";
+import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import "./Project.sass";
 
 interface ProjectInfoProps {
@@ -73,56 +74,60 @@ const projectInfos: ProjectInfoProps[] = [
 
 export const ProjectSection = () => {
   return (
-    <div className="project-list" id="projects">
-      <h1>projects</h1>
-      <div className="project-wrapper">
-        {projectInfos.map((project, index) => {
-          const delayTime = index * 0.3;
-          return (
-            <InViewWrapper
-              delay={delayTime}
-              addClassName="is-visible"
-              threshHold={0.5}
-            >
-              <Card
-                className={`bg-transparent space-y-5 p-2`}
-                key={project.title}
+    <SectionWrapper sectionId="projects">
+      <div className="project-list">
+        <h1>projects</h1>
+        <div className="project-wrapper">
+          {projectInfos.map((project, index) => {
+            const delayTime = index * 0.3;
+            return (
+              <InViewWrapper
+                delay={delayTime}
+                addClassName="is-visible"
+                threshHold={0.5}
               >
-                <img
-                  src={project.dark_img}
-                  alt="Project-Image"
-                  className="project-img"
-                  loading="lazy"
-                />
+                <Card
+                  className={`bg-transparent space-y-5 p-2`}
+                  key={project.title}
+                >
+                  <img
+                    src={project.dark_img}
+                    alt="Project-Image"
+                    className="project-img"
+                    loading="lazy"
+                  />
 
-                <div className="space-y-5">
-                  <h3>{project.title}</h3>
+                  <div className="space-y-5">
+                    <h3>{project.title}</h3>
 
-                  <p>{project.description}</p>
+                    <p>{project.description}</p>
 
-                  <TechStack stack={project.techStack} />
+                    <TechStack stack={project.techStack} />
 
-                  <div className="flex gap-3">
-                    <Button className="flex items-center gap-3">
-                      Live Demo
-                      <project.testDemo style={{ backgroundColor: "unset" }} />
-                    </Button>
-                    <Button asChild>
-                      <a
-                        href={project.source}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github style={{ backgroundColor: "unset" }} /> Source
-                      </a>
-                    </Button>
+                    <div className="flex gap-3">
+                      <Button className="flex items-center gap-3">
+                        Live Demo
+                        <project.testDemo
+                          style={{ backgroundColor: "unset" }}
+                        />
+                      </Button>
+                      <Button asChild>
+                        <a
+                          href={project.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github style={{ backgroundColor: "unset" }} /> Source
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </InViewWrapper>
-          );
-        })}
+                </Card>
+              </InViewWrapper>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };

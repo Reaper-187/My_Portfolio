@@ -13,7 +13,7 @@ export const Portfolio = () => {
       <Hero />
       <ProjectSection />
       <AboutMe />
-      <SkillSection />
+      {/* <SkillSection /> */}
       <ContactSection />
       <FooterSection />
     </>

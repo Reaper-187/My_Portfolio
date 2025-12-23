@@ -1,5 +1,7 @@
 import { Card } from "../ui/card";
 import { InViewWrapper } from "../Animations/InViewWrapper";
+import { SkillSection } from "../Skill-Section/SkillSection";
+import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import "./AboutMe.sass";
 
 const aboutMeText = [
@@ -19,20 +21,23 @@ const aboutMeText = [
 
 export const AboutMe = () => {
   return (
-    <Card className="about-me-wrapper" id="about-me">
-      <h1>About Me :</h1>
-      {aboutMeText.map((text, index) => {
-        const delayTime = index * 0.3;
-        return (
-          <InViewWrapper
-            delay={delayTime}
-            addClassName="about-me-text"
-            threshHold={1}
-          >
-            <p key={index}>{text.phrase}</p>
-          </InViewWrapper>
-        );
-      })}
-    </Card>
+    <SectionWrapper sectionId="about-me">
+      <Card className="about-me-wrapper lg:space-y-10" id="about-me">
+        <h1>About Me :</h1>
+        {aboutMeText.map((text, index) => {
+          const delayTime = index * 0.3;
+          return (
+            <InViewWrapper
+              delay={delayTime}
+              addClassName="about-me-text"
+              threshHold={1}
+            >
+              <p key={index}>{text.phrase}</p>
+            </InViewWrapper>
+          );
+        })}
+        <SkillSection />
+      </Card>
+    </SectionWrapper>
   );
 };

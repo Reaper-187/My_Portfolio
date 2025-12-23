@@ -3,6 +3,7 @@ import { SocialMedia } from "../social-media/SocialMedia";
 import { Button } from "../ui/button";
 import socialMediaImg from "../../assets/Cheik_SocialMedia.jpg";
 import "./Hero.sass";
+import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 
 const Intro = () => {
   return (
@@ -35,11 +36,13 @@ const Intro = () => {
 
 export const Hero = () => {
   return (
-    <section className="hero-wrapper" id="home">
-      <Intro />
-      <div className="hero-image">
-        <img src={socialMediaImg} alt="Profile-Img" />
+    <SectionWrapper sectionId="home">
+      <div className="hero-wrapper">
+        <Intro />
+        <div className="hero-image">
+          <img src={socialMediaImg} alt="Profile-Img" />
+        </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

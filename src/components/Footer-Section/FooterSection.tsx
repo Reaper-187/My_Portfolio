@@ -6,7 +6,7 @@ import "./Footer.sass";
 
 export const FooterSection = () => {
   return (
-    <div>
+    <>
       <div className="divider" />
       <div className="footer-wrapper">
         <div className="footer-socials space-y-5">
@@ -39,6 +39,6 @@ export const FooterSection = () => {
           back to Top <ArrowUpCircle />
         </Button>
       </div>
-    </div>
+    </>
   );
 };
