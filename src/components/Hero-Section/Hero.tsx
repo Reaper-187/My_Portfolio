@@ -26,7 +26,7 @@ const Intro = () => {
       <div className="flex gap-5">
         <Button className="cursor-pointer transition duration-300 hover:scale-[1.1]">
           Resumé
-          <FileDown />
+          <FileDown className="bg-transparent" />
         </Button>
         <SocialMedia />
       </div>

@@ -31,8 +31,9 @@ export const AboutMe = () => {
               delay={delayTime}
               addClassName="about-me-text"
               threshHold={1}
+              key={index}
             >
-              <p key={index}>{text.phrase}</p>
+              <p>{text.phrase}</p>
             </InViewWrapper>
           );
         })}

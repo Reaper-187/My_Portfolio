@@ -45,9 +45,9 @@ export const TechStackIcon = ({ stack }: TechStackIconProps) => {
             delay={delayTime}
             addClassName="icons-visible"
             threshHold={1}
+            key={index}
           >
             <img
-              key={index}
               src={iconMap[tech]}
               alt={tech}
               className={`w-15 h-15 md:w-15 md:h-15 lg:w-18 lg:h-18 p-1 rounded-md bg-primary-foreground icon-img`}

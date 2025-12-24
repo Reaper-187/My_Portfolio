@@ -34,7 +34,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Tailwind,
     ],
     demoLink: "url",
-    source: "url",
+    source: "https://github.com/Reaper-187/Money-Tracker",
   },
   {
     title: "Chat-App",
@@ -51,7 +51,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Tailwind,
     ],
     demoLink: "url",
-    source: "url",
+    source: "https://github.com/Reaper-187/Chat-Messanger",
   },
   {
     title: "Kanban-Board",
@@ -68,7 +68,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.TS,
     ],
     demoLink: "url",
-    source: "url",
+    source: "https://github.com/Reaper-187/Kanban-Board",
   },
 ];
 
@@ -76,7 +76,7 @@ export const ProjectSection = () => {
   return (
     <SectionWrapper sectionId="projects">
       <div className="project-list">
-        <h1>projects</h1>
+        <h1>Projects</h1>
         <div className="project-wrapper">
           {projectInfos.map((project, index) => {
             const delayTime = index * 0.3;
@@ -85,11 +85,9 @@ export const ProjectSection = () => {
                 delay={delayTime}
                 addClassName="is-visible"
                 threshHold={0.5}
+                key={index}
               >
-                <Card
-                  className={`bg-transparent space-y-5 p-2`}
-                  key={project.title}
-                >
+                <Card className={`bg-transparent space-y-5 p-2`}>
                   <img
                     src={project.dark_img}
                     alt="Project-Image"
@@ -105,11 +103,19 @@ export const ProjectSection = () => {
                     <TechStack stack={project.techStack} />
 
                     <div className="flex gap-3">
-                      <Button className="flex items-center gap-3">
-                        Live Demo
-                        <project.testDemo
-                          style={{ backgroundColor: "unset" }}
-                        />
+                      <Button asChild className="flex items-center gap-3">
+                        <a
+                          href={
+                            project.demoLink === "url" ? "#" : project.demoLink
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <project.testDemo
+                            style={{ backgroundColor: "unset" }}
+                          />
+                          Live Demo
+                        </a>
                       </Button>
                       <Button asChild>
                         <a
