@@ -15,7 +15,7 @@ export const ContactSection = () => {
           <InViewWrapper
             delay={0.5}
             addClassName="personal-info-cards"
-            threshHold={1}
+            threshHold={0.5}
           >
             <a href="mailto:abdulkader_cheik@outlook.de" className="block">
               <Card className="info-card">
@@ -44,7 +44,7 @@ export const ContactSection = () => {
           </InViewWrapper>
         </div>
 
-        <InViewWrapper delay={0.5} addClassName="contact-form" threshHold={1}>
+        <InViewWrapper delay={0.5} addClassName="contact-form" threshHold={0.5}>
           <FormContact />
         </InViewWrapper>
       </div>

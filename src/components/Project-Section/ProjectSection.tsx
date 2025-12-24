@@ -7,6 +7,8 @@ import chatDark from "@/assets/chat_imgs/chat_dark.png";
 import { Tech, TechStack } from "../TechStack/TechStack";
 import { InViewWrapper } from "../Animations/InViewWrapper";
 import { SectionWrapper } from "../Section-Comp/SectionWrapper";
+import { OverlayComp } from "../Overlay-Pattern/OverlayComp";
+import { useEffect, useState } from "react";
 import "./Project.sass";
 
 interface ProjectInfoProps {
@@ -73,6 +75,35 @@ const projectInfos: ProjectInfoProps[] = [
 ];
 
 export const ProjectSection = () => {
+  const [selectedProjectImage, setSelectedProjectImage] = useState<
+    string | undefined
+  >();
+
+  useEffect(() => {
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handelResetImgUrl();
+      }
+    };
+    if (selectedProjectImage) {
+      document.addEventListener("keydown", handleEscKey);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, [selectedProjectImage]);
+
+  const handleImgUrl = (e: React.MouseEvent<HTMLImageElement>) => {
+    const fullUrl = e.currentTarget.src;
+    const relativePath = fullUrl.replace(/^https?:\/\/[^\/]+\//, "/");
+    setSelectedProjectImage(relativePath);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handelResetImgUrl = () => {
+    document.body.style.overflow = "";
+    setSelectedProjectImage(undefined);
+  };
   return (
     <SectionWrapper sectionId="projects">
       <div className="project-list">
@@ -93,6 +124,7 @@ export const ProjectSection = () => {
                     alt="Project-Image"
                     className="project-img"
                     loading="lazy"
+                    onClick={handleImgUrl}
                   />
 
                   <div className="space-y-5">
@@ -133,6 +165,12 @@ export const ProjectSection = () => {
             );
           })}
         </div>
+        {selectedProjectImage && (
+          <OverlayComp
+            imgUrl={selectedProjectImage}
+            onCloseImg={handelResetImgUrl}
+          />
+        )}
       </div>
     </SectionWrapper>
   );
