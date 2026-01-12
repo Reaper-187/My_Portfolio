@@ -4,6 +4,7 @@ import { Card } from "../ui/card";
 import moneytrackerDark from "@/assets/moneytracker_imgs/moneytracker_dark.png";
 import kanbanDark from "@/assets/kanban_imgs/kanban_dark.png";
 import chatDark from "@/assets/chat_imgs/chat_dark.png";
+import chatLight from "@/assets/chat_v2_imgs/chat_v2.png";
 import { Tech, TechStack } from "../TechStack/TechStack";
 import { InViewWrapper } from "../Animations/InViewWrapper";
 import { SectionWrapper } from "../Section-Comp/SectionWrapper";
@@ -13,7 +14,7 @@ import "./Project.sass";
 
 interface ProjectInfoProps {
   title: string;
-  dark_img?: string;
+  project_img?: string;
   description: string;
   testDemo: React.ComponentType<LucideProps>;
   techStack: string[];
@@ -24,7 +25,7 @@ interface ProjectInfoProps {
 const projectInfos: ProjectInfoProps[] = [
   {
     title: "MoneyTracker",
-    dark_img: moneytrackerDark,
+    project_img: moneytrackerDark,
     description: "Managing in/outcome in a visuall way",
     testDemo: TestTubeDiagonal,
     techStack: [
@@ -40,7 +41,7 @@ const projectInfos: ProjectInfoProps[] = [
   },
   {
     title: "Chat-App",
-    dark_img: chatDark,
+    project_img: chatDark,
     description: "Chatting with friend/colleagues",
     testDemo: TestTubeDiagonal,
     techStack: [
@@ -57,7 +58,7 @@ const projectInfos: ProjectInfoProps[] = [
   },
   {
     title: "Kanban-Board",
-    dark_img: kanbanDark,
+    project_img: kanbanDark,
     description: "Managing Tasks with your Team",
     testDemo: TestTubeDiagonal,
     techStack: [
@@ -71,6 +72,24 @@ const projectInfos: ProjectInfoProps[] = [
     ],
     demoLink: "url",
     source: "https://github.com/Reaper-187/Kanban-Board",
+  },
+  {
+    title: "Chat-App-V2",
+    project_img: chatLight,
+    description: "Chatting with friend/colleagues",
+    testDemo: TestTubeDiagonal,
+    techStack: [
+      Tech.React,
+      Tech.Node,
+      Tech.Express,
+      Tech.Rest,
+      Tech.Mongo,
+      Tech.Socket,
+      Tech.Tailwind,
+      Tech.TS,
+    ],
+    demoLink: "url",
+    source: "https://github.com/Reaper-187/Chat-App-V2",
   },
 ];
 
@@ -120,7 +139,7 @@ export const ProjectSection = () => {
               >
                 <Card className={`bg-transparent space-y-5 p-2`}>
                   <img
-                    src={project.dark_img}
+                    src={project.project_img}
                     alt="Project-Image"
                     className="project-img"
                     loading="lazy"
