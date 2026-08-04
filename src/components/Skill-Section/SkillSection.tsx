@@ -27,7 +27,12 @@ export const SkillSection = () => {
         <div>
           <h3>Backend</h3>
           <TechStackIcon
-            stack={[TechIcon.EXPRESS, TechIcon.NODE, TechIcon.MONGODB]}
+            stack={[
+              TechIcon.EXPRESS,
+              TechIcon.NODE,
+              TechIcon.MONGODB,
+              TechIcon.POSTGRESQL,
+            ]}
           />
         </div>
       </div>

@@ -7,6 +7,7 @@ export enum Tech {
   Node = "Node.js",
   Express = "express.js",
   Mongo = "Mongo-DB",
+  PostgreSQL = "PostgreSQL",
   Rest = "Rest-API",
   Socket = "Socket.io",
   TS = "TypeScript",
@@ -19,8 +20,9 @@ export const TechStack = ({ stack }: TechStackProps) => {
     "Node.js": "text-green-300 border border-green-300",
     "Rest-API": "text-white border border-white",
     "Mongo-DB": "text-green-500 border border-green-500",
+    PostgreSQL: "text-indigo-300 border border-indigo-300",
     "Socket.io": "text-indigo-400 border border-indigo-300",
-    TypeScript: "text-blue-600 border border-blue-600",
+    TypeScript: "text-blue-500 border border-blue-500",
     TailwindCss: "text-blue-300 border border-blue-300",
     "express.js": "text-yellow-300 border border-yellow-300",
   };

@@ -117,9 +117,10 @@
   * {
     @apply border-border outline-ring/50;
     background-color: var(--foreground);
-    font-family: "inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--primary-foreground);
     scroll-behavior: smooth;
+    letter-spacing: 0.1em;
   }
   body {
     @apply bg-background text-foreground;

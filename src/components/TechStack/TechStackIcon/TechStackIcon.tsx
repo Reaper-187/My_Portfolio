@@ -6,6 +6,7 @@ import express from "@/assets/dev_icons/express.svg";
 import tailwind from "@/assets/dev_icons/tailwind.svg";
 import sass from "@/assets/dev_icons/sass.svg";
 import ts from "@/assets/dev_icons/ts.svg";
+import postgresql from "@/assets/dev_icons/postgresql.svg";
 import "./TechIcon.sass";
 import { InViewWrapper } from "@/components/Animations/InViewWrapper";
 
@@ -18,6 +19,7 @@ export enum TechIcon {
   TAILWIND = "tailwind",
   SASS = "sass",
   TS = "ts",
+  POSTGRESQL = "postgresql",
 }
 
 const iconMap: Record<TechIcon, string> = {
@@ -25,6 +27,7 @@ const iconMap: Record<TechIcon, string> = {
   [TechIcon.REACT]: reactjs,
   [TechIcon.NODE]: nodejs,
   [TechIcon.MONGODB]: mongodb,
+  [TechIcon.POSTGRESQL]: postgresql,
   [TechIcon.EXPRESS]: express,
   [TechIcon.TAILWIND]: tailwind,
   [TechIcon.SASS]: sass,

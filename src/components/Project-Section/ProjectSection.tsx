@@ -5,6 +5,8 @@ import moneytrackerDark from "@/assets/moneytracker_imgs/moneytracker_dark.png";
 import kanbanDark from "@/assets/kanban_imgs/kanban_dark.png";
 import chatDark from "@/assets/chat_imgs/chat_dark.png";
 import chatLight from "@/assets/chat_v2_imgs/chat_v2.png";
+import urlShortnerLight from "@/assets/url_shortner/url_shortner_light.png";
+import featureFlagLight from "@/assets/feature_flag_imgs/dashboard.png";
 import { Tech, TechStack } from "../TechStack/TechStack";
 import { InViewWrapper } from "../Animations/InViewWrapper";
 import { SectionWrapper } from "../Section-Comp/SectionWrapper";
@@ -90,6 +92,40 @@ const projectInfos: ProjectInfoProps[] = [
     ],
     demoLink: "url",
     source: "https://github.com/Reaper-187/Chat-App-V2",
+  },
+  {
+    title: "Feature-Flag-Tool",
+    project_img: featureFlagLight,
+    description: "be able to controlle your featuers",
+    testDemo: TestTubeDiagonal,
+    techStack: [
+      Tech.React,
+      Tech.Express,
+      Tech.TS,
+      Tech.Node,
+      Tech.Rest,
+      Tech.PostgreSQL,
+      Tech.Tailwind,
+    ],
+    demoLink: "url",
+    source: "https://github.com/Reaper-187/Feature-Flag-Tool",
+  },
+  {
+    title: "URL-Shortner",
+    project_img: urlShortnerLight,
+    description: "cut your long url into a shorter one",
+    testDemo: TestTubeDiagonal,
+    techStack: [
+      Tech.React,
+      Tech.Express,
+      Tech.TS,
+      Tech.Node,
+      Tech.Rest,
+      Tech.PostgreSQL,
+      Tech.Tailwind,
+    ],
+    demoLink: "url",
+    source: "https://github.com/Reaper-187/url-shortener",
   },
 ];
 
