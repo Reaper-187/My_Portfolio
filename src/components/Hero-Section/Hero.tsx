@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import socialMediaImg from "../../assets/Cheik_SocialMedia.jpg";
 import "./Hero.sass";
 import { SectionWrapper } from "../Section-Comp/SectionWrapper";
+import myCv from "../../../public/CV_ABDULKADER_CHEIKHKAMIS_DEU.pdf";
 
 const Intro = () => {
   return (
@@ -25,7 +26,13 @@ const Intro = () => {
 
       <div className="flex gap-5">
         <Button className="cursor-pointer transition duration-300 hover:scale-[1.1]">
-          Resumé
+          <a
+            className="bg-transparent"
+            href={myCv}
+            download="CV_Abdulkader_Cheikhkamis.pdf"
+          >
+            Resumé
+          </a>
           <FileDown className="bg-transparent" />
         </Button>
         <SocialMedia />

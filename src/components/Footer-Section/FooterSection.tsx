@@ -11,14 +11,14 @@ export const FooterSection = () => {
       <div className="footer-wrapper">
         <div className="footer-socials space-y-5">
           <h2>Abdulkader Cheikhkamis</h2>
-          <p>Junior Frontend-Developer but Fullstack coming soon 😊</p>
+          <p>Frontend-Developer but on the way to Fullstack 😊</p>
           <SocialMedia />
         </div>
 
         <ul className="link-wrapper space-y-3">
           <Label className="link-label">Quick Links :</Label>
           <li>
-            <a href="#home">Home</a>
+            <a href="#home">Me</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
@@ -34,8 +34,11 @@ export const FooterSection = () => {
       </div>
       <div className="divider" />
       <div className="signature">
-        <p className="text-white/30">©️ 2025 Abdulkader Cheikhkamis</p>
-        <Button onClick={() => window.scrollTo(0, 0)}>
+        <p className="text-white/30">©️ 2026 Abdulkader Cheikhkamis</p>
+        <Button
+          className="cursior-pointer"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           back to Top <ArrowUpCircle />
         </Button>
       </div>
