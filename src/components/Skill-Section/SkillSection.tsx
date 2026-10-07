@@ -32,6 +32,7 @@ export const SkillSection = () => {
               TechIcon.NODE,
               TechIcon.MONGODB,
               TechIcon.POSTGRESQL,
+              TechIcon.NESTJS,
             ]}
           />
         </div>
