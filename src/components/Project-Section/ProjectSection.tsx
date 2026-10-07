@@ -13,7 +13,6 @@ import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import { OverlayComp } from "../Overlay-Pattern/OverlayComp";
 import { useEffect, useState } from "react";
 import "./Project.sass";
-import { toast } from "sonner";
 
 interface ProjectInfoProps {
   title: string;
