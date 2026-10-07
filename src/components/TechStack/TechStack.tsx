@@ -12,6 +12,7 @@ export enum Tech {
   Socket = "Socket.io",
   TS = "TypeScript",
   Tailwind = "TailwindCss",
+  Nest = "Nest.js",
 }
 
 export const TechStack = ({ stack }: TechStackProps) => {
@@ -25,6 +26,7 @@ export const TechStack = ({ stack }: TechStackProps) => {
     TypeScript: "text-blue-500 border border-blue-500",
     TailwindCss: "text-blue-300 border border-blue-300",
     "express.js": "text-yellow-300 border border-yellow-300",
+    "Nest.js": "text-red-300 border border-red-300",
   };
 
   return (

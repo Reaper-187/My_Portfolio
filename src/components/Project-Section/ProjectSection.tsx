@@ -13,6 +13,7 @@ import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import { OverlayComp } from "../Overlay-Pattern/OverlayComp";
 import { useEffect, useState } from "react";
 import "./Project.sass";
+import { toast } from "sonner";
 
 interface ProjectInfoProps {
   title: string;
@@ -20,7 +21,7 @@ interface ProjectInfoProps {
   description: string;
   testDemo: React.ComponentType<LucideProps>;
   techStack: string[];
-  demoLink: string;
+  demoLink?: string;
   source: string;
 }
 
@@ -38,7 +39,6 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Mongo,
       Tech.Tailwind,
     ],
-    demoLink: "url",
     source: "https://github.com/Reaper-187/Money-Tracker",
   },
   {
@@ -55,7 +55,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Socket,
       Tech.Tailwind,
     ],
-    demoLink: "url",
+
     source: "https://github.com/Reaper-187/Chat-Messanger",
   },
   {
@@ -72,7 +72,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Mongo,
       Tech.TS,
     ],
-    demoLink: "url",
+
     source: "https://github.com/Reaper-187/Kanban-Board",
   },
   {
@@ -90,7 +90,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.Tailwind,
       Tech.TS,
     ],
-    demoLink: "url",
+
     source: "https://github.com/Reaper-187/Chat-App-V2",
   },
   {
@@ -107,7 +107,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.PostgreSQL,
       Tech.Tailwind,
     ],
-    demoLink: "url",
+
     source: "https://github.com/Reaper-187/Feature-Flag-Tool",
   },
   {
@@ -124,7 +124,7 @@ const projectInfos: ProjectInfoProps[] = [
       Tech.PostgreSQL,
       Tech.Tailwind,
     ],
-    demoLink: "url",
+
     source: "https://github.com/Reaper-187/url-shortener",
   },
 ];
@@ -166,6 +166,7 @@ export const ProjectSection = () => {
         <div className="project-wrapper">
           {projectInfos.map((project, index) => {
             const delayTime = index * 0.3;
+            const demoOnline = Boolean(project.demoLink);
             return (
               <InViewWrapper
                 delay={delayTime}
@@ -191,18 +192,25 @@ export const ProjectSection = () => {
 
                     <div className="flex gap-3">
                       <Button asChild className="flex items-center gap-3">
-                        <a
-                          href={
-                            project.demoLink === "url" ? "#" : project.demoLink
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <project.testDemo
-                            style={{ backgroundColor: "unset" }}
-                          />
-                          Live Demo
-                        </a>
+                        <div>
+                          {demoOnline ? (
+                            <a
+                              className="bg-primary"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={project.demoLink}
+                            >
+                              Test Demo
+                            </a>
+                          ) : (
+                            <>
+                              <project.testDemo
+                                style={{ backgroundColor: "unset" }}
+                              />
+                              upload is in progress...
+                            </>
+                          )}
+                        </div>
                       </Button>
                       <Button asChild>
                         <a
