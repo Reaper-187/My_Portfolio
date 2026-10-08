@@ -189,28 +189,28 @@ export const ProjectSection = () => {
 
                     <TechStack stack={project.techStack} />
 
-                    <div className="flex gap-3">
-                      <Button asChild className="flex items-center gap-3">
-                        <div>
-                          {demoOnline ? (
-                            <a
-                              className="bg-primary"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={project.demoLink}
-                            >
-                              Test Demo
-                            </a>
-                          ) : (
-                            <>
-                              <project.testDemo
-                                style={{ backgroundColor: "unset" }}
-                              />
-                              upload is in progress...
-                            </>
-                          )}
-                        </div>
-                      </Button>
+                    <div className="flex flex-wrap gap-3">
+                      {demoOnline ? (
+                        <Button
+                          asChild
+                          className="flex items-center gap-3 bg-primary"
+                        >
+                          <a
+                            href={project.demoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Test Demo
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button disabled className="flex items-center gap-3">
+                          <project.testDemo
+                            style={{ backgroundColor: "unset" }}
+                          />
+                          upload is in progress...
+                        </Button>
+                      )}
                       <Button asChild>
                         <a
                           href={project.source}
