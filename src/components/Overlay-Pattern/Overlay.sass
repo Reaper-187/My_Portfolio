@@ -6,39 +6,60 @@
   display: flex
   justify-content: center
   align-items: center
+  padding: 2.5rem
+  cursor: zoom-out
   animation: overlayFadeIn 0.3s ease forwards
+
+  @media (max-width: 768px)
+    padding: 1rem
 
   .close-btn
     position: absolute
-    top: 2rem
-    right: 2rem
+    top: 1.5rem
+    right: 1.5rem
     z-index: 101
-    opacity: 0
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 0.5rem
+    font-size: 1rem
+    background-color: transparent
+    border: none
+    border-radius: 50%
     cursor: pointer
+    color: #ffffff
+    opacity: 0
     animation: fadeIn 0.2s ease forwards
     animation-delay: 0.25s
+    transition: color .2s ease, background-color .2s ease
+
     &:hover
-      color: rgb(255, 91, 91)
+      color: #ff5b5b
+      background-color: rgba(255, 255, 255, 0.08)
 
-  .overlay-wrapper
-    background-color: transparent
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 90%
-    height: 90%
-    max-width: 1200px
-    max-height: 800px
+    &:focus-visible
+      outline: 2px solid #ffffff
+      outline-offset: 2px
+
+    @media (max-width: 768px)
+      top: 1rem
+      right: 1rem
+      font-size: 0.9rem
+
+    .close-icon
+      background-color: transparent
+
+  .overlay-image
+    display: block
+    max-width: 100%
+    max-height: 100%
+    width: auto
+    height: auto
+    object-fit: contain
+    border-radius: 8px
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.85)
+    cursor: default
     animation: imageZoomIn 0.35s ease forwards
-
-    img
-      max-width: 100%
-      max-height: 100%
-      width: auto
-      height: auto
-      object-fit: contain
-      border-radius: 8px
-      box-shadow: 0 0px 10px rgba(255, 255, 255, 0.849)
 
 @keyframes overlayFadeIn
   from
@@ -56,4 +77,11 @@
 
 @keyframes fadeIn
   to
+    opacity: 1
+
+@media (prefers-reduced-motion: reduce)
+  .overlay-container,
+  .overlay-container .close-btn,
+  .overlay-container .overlay-image
+    animation: none
     opacity: 1

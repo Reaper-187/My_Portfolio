@@ -2,9 +2,15 @@
   display: flex
   align-items: center
   justify-content: center
-  padding: 5rem 0 0 0
+  padding: 3rem 1rem 0 1rem
+  position: sticky
+  top: 0
+  background-color: unset
+  z-index: 10
+
   @media (max-width: 768px)
-    padding: 3rem 0 0 0
+    padding: 3rem 0.75rem 0 0.75rem
+
 .nav-links
   transform-origin: center
   animation: navGrow .7s cubic-bezier(.25,.8,.25,1) forwards
@@ -13,7 +19,7 @@
   padding: 1rem
   position: fixed
   border-radius: 30px
-  box-shadow: 0px 0px 7px 0px #ffffff
+  box-shadow: 0px 0px 4px 0px #ffffff
   display: flex
   gap: 3rem
   list-style: none

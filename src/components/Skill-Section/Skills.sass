@@ -1,33 +1,51 @@
 .skill-container
   background-color: unset
   border: none
-  margin-bottom: 10rem
+  margin-bottom: 0
 
 .skill-split
-  position: relative
   display: flex
+  align-items: stretch
   justify-content: center
+  gap: 4rem
+  position: relative
+
+  @media (max-width: 768px)
+    flex-direction: column
+    align-items: center
+    gap: 2.5rem
+
+.skill-column
+  display: flex
+  flex-direction: column
   align-items: center
-  gap: 5rem
-  @media (max-width: 640px)
-    display: block
-    justify-items: center
+  flex: 1 1 0
+  min-width: 0
+  gap: 1rem
 
-  .divider
-    position: absolute
-    inset: 3rem 0 0 0rem
-    margin: auto
-    width: 2px
-    height: 150px
-    background: rgba(255,255,255,0.2)
-    @media (max-width: 640px)
-      display: none
-
-h3
-  font-size: 1.5rem
-  margin:
-    bottom: 1rem
-
-  @media (max-width: 640px)
-    padding: 0 1rem
+  h3
+    font-size: 1.5rem
+    margin: 0
     text-align: center
+
+    @media (max-width: 640px)
+      font-size: 1.25rem
+
+  > div:last-child
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 0.75rem
+    width: 100%
+
+.divider
+  flex: 0 0 2px
+  align-self: stretch
+  background: rgba(255, 255, 255, 0.2)
+  border-radius: 1px
+
+  @media (max-width: 768px)
+    flex: 0 0 2px
+    width: 60%
+    height: 2px
+    align-self: center

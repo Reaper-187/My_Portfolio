@@ -9,7 +9,7 @@ export const SkillSection = () => {
   return (
     <Card className="skill-container">
       <div className="skill-split">
-        <div>
+        <div className="skill-column">
           <h3>Frontend</h3>
           <TechStackIcon
             stack={[
@@ -22,9 +22,9 @@ export const SkillSection = () => {
           />
         </div>
 
-        <div className="divider" />
+        <div className="divider" aria-hidden="true" />
 
-        <div>
+        <div className="skill-column">
           <h3>Backend</h3>
           <TechStackIcon
             stack={[

@@ -134,6 +134,12 @@ export const ProjectSection = () => {
   >();
 
   useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+  useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         handelResetImgUrl();
@@ -173,7 +179,7 @@ export const ProjectSection = () => {
                 threshHold={0.5}
                 key={index}
               >
-                <Card className={`bg-transparent space-y-5 p-2`}>
+                <Card className="project-card">
                   <img
                     src={project.project_img}
                     alt="Project-Image"
@@ -182,18 +188,20 @@ export const ProjectSection = () => {
                     onClick={handleImgUrl}
                   />
 
-                  <div className="space-y-5">
-                    <h3>{project.title}</h3>
+                  <div className="project-card-body">
+                    <h3 className="project-title">{project.title}</h3>
 
-                    <p>{project.description}</p>
+                    <p className="project-description">{project.description}</p>
 
-                    <TechStack stack={project.techStack} />
+                    <div className="project-tech">
+                      <TechStack stack={project.techStack} />
+                    </div>
 
-                    <div className="flex flex-wrap gap-3">
+                    <div className="project-actions">
                       {demoOnline ? (
                         <Button
                           asChild
-                          className="flex items-center gap-3 bg-primary"
+                          className="project-btn project-btn-primary"
                         >
                           <a
                             href={project.demoLink}
@@ -204,20 +212,18 @@ export const ProjectSection = () => {
                           </a>
                         </Button>
                       ) : (
-                        <Button disabled className="flex items-center gap-3">
-                          <project.testDemo
-                            style={{ backgroundColor: "unset" }}
-                          />
+                        <Button disabled className="project-btn">
+                          <project.testDemo className="project-btn-icon" />
                           upload is in progress...
                         </Button>
                       )}
-                      <Button asChild>
+                      <Button asChild className="project-btn">
                         <a
                           href={project.source}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Github style={{ backgroundColor: "unset" }} /> Source
+                          <Github className="project-btn-icon" /> Source
                         </a>
                       </Button>
                     </div>

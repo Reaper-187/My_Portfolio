@@ -9,17 +9,17 @@ import "./Contact.sass";
 export const ContactSection = () => {
   return (
     <SectionWrapper sectionId="contact">
-      <div className="contact-container space-y-5">
-        <div className="personal-info w-full md:max-w-1/2 lg:w-1/4 space-y-5">
+      <div className="contact-container">
+        <div className="personal-info">
           <h3>Contact information</h3>
           <InViewWrapper
             delay={0.5}
             addClassName="personal-info-cards"
             threshHold={0.5}
           >
-            <a href="mailto:abdulkader_cheik@outlook.de" className="block">
+            <a href="mailto:abdulkader_cheik@outlook.de" className="info-link">
               <Card className="info-card">
-                <Label className="w-fit">
+                <Label className="info-label">
                   <Mail color="#4F46E5" />
                   Email
                 </Label>
@@ -32,9 +32,10 @@ export const ContactSection = () => {
               href="https://www.google.com/maps/place/N%C3%BCrnberg"
               target="_blank"
               rel="noopener noreferrer"
+              className="info-link"
             >
               <Card className="info-card">
-                <Label className="w-fit">
+                <Label className="info-label">
                   <MapPin color="#4F46E5" /> Location
                 </Label>
                 <p>Nürnberg, Germany</p>

@@ -43,7 +43,6 @@ const iconMap: Record<TechIcon, string> = {
   [TechIcon.TS]: ts,
 };
 
-// Anzeigenamen für die Tooltips
 const nameMap: Record<TechIcon, string> = {
   [TechIcon.JS]: "JavaScript",
   [TechIcon.REACT]: "React",
@@ -61,7 +60,6 @@ interface TechStackIconProps {
   stack: TechIcon[];
 }
 
-// Keys müssen exakt den Werten aus nameMap entsprechen
 const colors: Record<string, string> = {
   JavaScript: "text-yellow-400",
   React: "text-blue-400",

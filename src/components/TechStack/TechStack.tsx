@@ -1,3 +1,4 @@
+import "./TechStack.sass";
 interface TechStackProps {
   stack: string[];
 }
@@ -17,27 +18,22 @@ export enum Tech {
 
 export const TechStack = ({ stack }: TechStackProps) => {
   const colors: Record<string, string> = {
-    "React.js": "text-blue-400 border border-blue-400",
-    "Node.js": "text-green-300 border border-green-300",
-    "Rest-API": "text-white border border-white",
-    "Mongo-DB": "text-green-500 border border-green-500",
-    PostgreSQL: "text-indigo-300 border border-indigo-300",
-    "Socket.io": "text-indigo-400 border border-indigo-300",
-    TypeScript: "text-blue-500 border border-blue-500",
-    TailwindCss: "text-blue-300 border border-blue-300",
-    "express.js": "text-yellow-300 border border-yellow-300",
-    "Nest.js": "text-red-300 border border-red-300",
+    "React.js": "tech-blue-400",
+    "Node.js": "tech-green-300",
+    "Rest-API": "tech-white",
+    "Mongo-DB": "tech-green-500",
+    PostgreSQL: "tech-indigo-300",
+    "Socket.io": "tech-indigo-400",
+    TypeScript: "tech-blue-500",
+    TailwindCss: "tech-blue-300",
+    "express.js": "tech-yellow-300",
+    "Nest.js": "tech-red-300",
   };
 
   return (
-    <div className="flex gap-3 flex-wrap">
+    <div className="tech-stack">
       {stack.map((tech) => (
-        <p
-          key={tech}
-          className={`p-1 text-xs rounded-md ${
-            colors[tech] || "border border-gray-200"
-          }`}
-        >
+        <p key={tech} className={`tech-tag ${colors[tech] || "tech-default"}`}>
           {tech}
         </p>
       ))}
