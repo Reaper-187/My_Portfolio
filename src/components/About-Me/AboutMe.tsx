@@ -23,7 +23,7 @@ export const AboutMe = () => {
   return (
     <SectionWrapper sectionId="about-me">
       <Card className="about-me-wrapper" id="about-me">
-        <h1>About Me :</h1>
+        <h1>About Me</h1>
         {aboutMeText.map((text, index) => {
           const delayTime = index * 0.3;
           return (
