@@ -7,8 +7,11 @@
   display: flex
   align-items: stretch
   justify-content: center
-  gap: 4rem
+  gap: 3rem
   position: relative
+
+  @media (max-width: 1024px)
+    gap: 2rem
 
   @media (max-width: 768px)
     flex-direction: column
@@ -28,8 +31,11 @@
     margin: 0
     text-align: center
 
-    @media (max-width: 640px)
+    @media (max-width: 1024px)
       font-size: 1.25rem
+
+    @media (max-width: 640px)
+      font-size: 1.125rem
 
   > div:last-child
     display: flex
@@ -44,8 +50,8 @@
   background: rgba(255, 255, 255, 0.2)
   border-radius: 1px
 
+  @media (max-width: 1024px)
+    flex: 0 0 1px
+
   @media (max-width: 768px)
-    flex: 0 0 2px
-    width: 60%
-    height: 2px
-    align-self: center
+    display: none

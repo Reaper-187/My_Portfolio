@@ -36,6 +36,20 @@ export const SkillSection = () => {
             ]}
           />
         </div>
+
+        <div className="divider" aria-hidden="true" />
+
+        <div className="skill-column">
+          <h3>Tools</h3>
+          <TechStackIcon
+            stack={[
+              TechIcon.GIT,
+              TechIcon.JEST,
+              TechIcon.POSTMAN,
+              TechIcon.PRISMA,
+            ]}
+          />
+        </div>
       </div>
     </Card>
   );

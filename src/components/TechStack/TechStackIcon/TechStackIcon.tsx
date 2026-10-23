@@ -1,3 +1,9 @@
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import js from "@/assets/dev_icons/js.svg";
 import reactjs from "@/assets/dev_icons/reactjs.svg";
 import nodejs from "@/assets/dev_icons/nodejs.svg";
@@ -8,14 +14,12 @@ import sass from "@/assets/dev_icons/sass.svg";
 import ts from "@/assets/dev_icons/ts.svg";
 import postgresql from "@/assets/dev_icons/postgresql.svg";
 import nestjs from "@/assets/dev_icons/nestjs.svg";
-import "./TechIcon.sass";
+import prisma from "@/assets/dev_icons/prisma.svg";
+import git from "@/assets/dev_icons/git.svg";
+import postman from "@/assets/dev_icons/postman.svg";
+import jest from "@/assets/dev_icons/jest.svg";
 import { InViewWrapper } from "@/components/Animations/InViewWrapper";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import "./TechIcon.sass";
 
 export enum TechIcon {
   JS = "js",
@@ -28,6 +32,10 @@ export enum TechIcon {
   TS = "ts",
   POSTGRESQL = "postgresql",
   NESTJS = "nestjs",
+  PRISMA = "prisma",
+  GIT = "git",
+  POSTMAN = "postman",
+  JEST = "jest",
 }
 
 const iconMap: Record<TechIcon, string> = {
@@ -41,6 +49,10 @@ const iconMap: Record<TechIcon, string> = {
   [TechIcon.TAILWIND]: tailwind,
   [TechIcon.SASS]: sass,
   [TechIcon.TS]: ts,
+  [TechIcon.PRISMA]: prisma,
+  [TechIcon.GIT]: git,
+  [TechIcon.POSTMAN]: postman,
+  [TechIcon.JEST]: jest,
 };
 
 const nameMap: Record<TechIcon, string> = {
@@ -54,29 +66,37 @@ const nameMap: Record<TechIcon, string> = {
   [TechIcon.TS]: "TypeScript",
   [TechIcon.POSTGRESQL]: "PostgreSQL",
   [TechIcon.NESTJS]: "NestJS",
+  [TechIcon.PRISMA]: "Prisma",
+  [TechIcon.GIT]: "Git",
+  [TechIcon.POSTMAN]: "Postman",
+  [TechIcon.JEST]: "Jest",
+};
+
+const colorMap: Record<TechIcon, string> = {
+  [TechIcon.JS]: "tech-yellow-400",
+  [TechIcon.REACT]: "tech-blue-400",
+  [TechIcon.NODE]: "tech-green-300",
+  [TechIcon.MONGODB]: "tech-green-500",
+  [TechIcon.EXPRESS]: "tech-yellow-300",
+  [TechIcon.TAILWIND]: "tech-blue-300",
+  [TechIcon.SASS]: "tech-pink-300",
+  [TechIcon.TS]: "tech-blue-500",
+  [TechIcon.POSTGRESQL]: "tech-indigo-300",
+  [TechIcon.NESTJS]: "tech-red-300",
+  [TechIcon.PRISMA]: "tech-teal-300",
+  [TechIcon.GIT]: "tech-orange-400",
+  [TechIcon.POSTMAN]: "tech-orange-300",
+  [TechIcon.JEST]: "tech-red-400",
 };
 
 interface TechStackIconProps {
   stack: TechIcon[];
 }
 
-const colors: Record<string, string> = {
-  JavaScript: "text-yellow-400",
-  React: "text-blue-400",
-  "Node.js": "text-green-300",
-  MongoDB: "text-green-500",
-  Express: "text-yellow-300",
-  "Tailwind CSS": "text-blue-300",
-  Sass: "text-pink-300",
-  TypeScript: "text-blue-500",
-  PostgreSQL: "text-indigo-300",
-  NestJS: "text-red-300",
-};
-
 export const TechStackIcon = ({ stack }: TechStackIconProps) => {
   return (
     <TooltipProvider delayDuration={100}>
-      <div className="flex gap-4 flex-wrap p-3 md:p-0">
+      <div className="tech-icon-list">
         {stack.map((tech, index) => {
           const delayTime = index * 0.3;
           return (
@@ -84,20 +104,24 @@ export const TechStackIcon = ({ stack }: TechStackIconProps) => {
               delay={delayTime}
               addClassName="icons-visible"
               threshHold={1}
-              key={index}
+              key={tech}
             >
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <img
-                    src={iconMap[tech]}
-                    alt={tech}
-                    className={`w-15 h-15 md:w-15 md:h-15 lg:w-18 lg:h-18 p-1 rounded-md bg-primary-foreground icon-img`}
-                  />
+                  <button
+                    type="button"
+                    className="tech-icon-btn"
+                    aria-label={nameMap[tech]}
+                  >
+                    <img
+                      src={iconMap[tech]}
+                      alt={nameMap[tech]}
+                      className="tech-icon-img"
+                    />
+                  </button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p
-                    className={`${colors[nameMap[tech]] ?? ""} bg-transparent text-md md:text-lg lg:text-xl`}
-                  >
+                  <p className={`tech-tooltip ${colorMap[tech]}`}>
                     {nameMap[tech]}
                   </p>
                 </TooltipContent>

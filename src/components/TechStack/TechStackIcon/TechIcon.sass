@@ -1,12 +1,87 @@
+.tech-icon-btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 0.5rem
+  background-color: rgba(255, 255, 255, 0.92)
+  border: none
+  border-radius: 0.5rem
+  cursor: pointer
+  transition: transform .2s ease, background-color .2s ease
+
+  &:hover
+    transform: translateY(-2px)
+    background-color: rgba(255, 255, 255, 1)
+
+  &:focus-visible
+    outline: 2px solid #ffffff
+    outline-offset: 2px
+
+.tech-icon-img
+  width: 3rem
+  height: 3rem
+  padding: 0
+  border-radius: 0
+  background-color: transparent
+  object-fit: contain
+
+  @media (min-width: 1024px)
+    width: 3.5rem
+    height: 3.5rem
+
+.tech-tooltip
+  background-color: transparent
+  font-size: 1rem
+
+  @media (min-width: 768px)
+    font-size: 1.125rem
+
+  @media (min-width: 1024px)
+    font-size: 1.25rem
+
+.tech-yellow-400
+  color: #facc15
+.tech-yellow-300
+  color: #fde047
+.tech-blue-400
+  color: #60a5fa
+.tech-blue-500
+  color: #3b82f6
+.tech-blue-300
+  color: #93c5fd
+.tech-green-300
+  color: #86efac
+.tech-green-500
+  color: #22c55e
+.tech-pink-300
+  color: #f9a8d4
+.tech-indigo-300
+  color: #a5b4fc
+.tech-red-300
+  color: #fca5a5
+.tech-red-400
+  color: #f87171
+.tech-teal-300
+  color: #5eead4
+.tech-orange-300
+  color: #fdba74
+.tech-orange-400
+  color: #fb923c
+
 .icons-visible
   animation: fade-up 0.8s forwards
   animation-delay: var(--delay)
-  transition: ease
 
 @keyframes fade-up
   0%
     transform: translateX(28rem)
     opacity: 0
   100%
-    transform: translateX(0px)
+    transform: translateX(0)
     opacity: 1
+
+@media (prefers-reduced-motion: reduce)
+  .icons-visible
+    animation: none
+    opacity: 1
+    transform: none

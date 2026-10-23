@@ -1,12 +1,34 @@
+.contact-section
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 2rem 1rem
+
+  @media (max-width: 768px)
+    gap: 1.5rem
+    padding: 1.5rem 1rem
+
+  @media (max-width: 425px)
+    padding: 1rem 0.75rem
+
+  h3
+    font-size: 1.5rem
+    margin: 0
+    text-align: left
+
+    @media (max-width: 768px)
+      font-size: 1.25rem
+      text-align: center
+
 .contact-container
   display: flex
   align-items: flex-start
   justify-content: center
   gap: 4rem
   width: 100%
-  max-width: 1200px
-  margin: 0 auto
-  padding: 2rem 1rem
 
   @media (max-width: 1024px)
     gap: 2.5rem
@@ -15,10 +37,6 @@
     flex-direction: column
     align-items: center
     gap: 2rem
-    padding: 1.5rem 1rem
-
-  @media (max-width: 425px)
-    padding: 1rem 0.75rem
 
 .personal-info
   display: flex
@@ -31,14 +49,6 @@
     flex: 1 1 100%
     width: 100%
     min-width: 0
-
-  h3
-    font-size: 1.25rem
-    margin: 0
-    text-align: left
-
-    @media (max-width: 768px)
-      text-align: center
 
 .personal-info-cards
   display: flex

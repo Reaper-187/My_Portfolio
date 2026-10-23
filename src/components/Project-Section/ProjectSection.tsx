@@ -170,7 +170,7 @@ export const ProjectSection = () => {
         <h1>Projects</h1>
         <div className="project-wrapper">
           {projectInfos.map((project, index) => {
-            const delayTime = index * 0.3;
+            const delayTime = index * 0.2;
             const demoOnline = Boolean(project.demoLink);
             return (
               <InViewWrapper
