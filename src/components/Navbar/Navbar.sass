@@ -2,31 +2,35 @@
   display: flex
   align-items: center
   justify-content: center
-  padding: 3rem 1rem 0 1rem
+  padding: 1rem 1rem 0 1rem
   position: sticky
   top: 0
   background-color: unset
   z-index: 10
 
-  @media (max-width: 768px)
-    padding: 3rem 0.75rem 0 0.75rem
+  .navbar-desktop
+    display: flex
+    align-items: center
+    gap: 5rem
+    background-color: unset
+
+    @media (max-width: 768px)
+      display: none
 
 .nav-links
   transform-origin: center
-  animation: navGrow .7s cubic-bezier(.25,.8,.25,1) forwards
-  background-color: rgba(255, 255, 255, 0.062)
-  backdrop-filter: blur(10px)
   padding: 1rem
-  position: fixed
-  border-radius: 30px
-  box-shadow: 0px 0px 4px 0px #ffffff
+  position: relative
   display: flex
   gap: 3rem
   list-style: none
+  background-color: unset
   z-index: 10
+
   @media (max-width: 425px)
     gap: 1rem
     font-size: small
+
   li
     background-color: unset
     opacity: 0
@@ -39,6 +43,7 @@
       animation-delay: .7s
     &:nth-child(4)
       animation-delay: .8s
+
     a
       position: relative
       background-color: unset
@@ -81,3 +86,85 @@
   to
     opacity: 1
     transform: translateY(0)
+
+.navbar-toggle
+  display: none
+  align-items: center
+  justify-content: center
+  width: 2.75rem
+  height: 2.75rem
+  padding: 0
+  border: 1px solid rgba(255, 255, 255, 0.15)
+  border-radius: 12px
+  background-color: unset
+  color: inherit
+  cursor: pointer
+  transition: border-color .2s ease
+
+  &:hover
+    border-color: rgba(255, 255, 255, 0.35)
+
+  &:focus-visible
+    outline: 2px solid #ffffff
+    outline-offset: 2px
+
+  @media (max-width: 768px)
+    display: inline-flex
+    position: absolute
+    top: 1rem
+    right: 1rem
+
+.mobile-menu
+  position: fixed
+  top: 4.5rem
+  left: 1rem
+  right: 1rem
+  display: flex
+  flex-direction: column
+  gap: 1.25rem
+  margin: 1rem auto 0
+  padding: 1.25rem
+  border: 1px solid rgba(255, 255, 255, 0.15)
+  border-radius: 16px
+  animation: mobileMenuIn .2s ease forwards
+
+.mobile-links
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+  list-style: none
+  padding: 0
+  margin: 0
+
+  a
+    display: block
+    color: inherit
+    text-decoration: none
+    padding: 0.6rem 0.5rem
+    border-radius: 8px
+    transition: background-color .2s ease
+
+    &:hover
+      background-color: rgba(255, 255, 255, 0.06)
+
+    &:focus-visible
+      outline: 2px solid #ffffff
+      outline-offset: 2px
+
+.mobile-lang
+  display: flex
+  justify-content: flex-start
+  padding-top: 1rem
+  border-top: 1px solid rgba(255, 255, 255, 0.15)
+
+@keyframes mobileMenuIn
+  from
+    opacity: 0
+    transform: translateY(-6px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@media (prefers-reduced-motion: reduce)
+  .mobile-menu
+    animation: none
