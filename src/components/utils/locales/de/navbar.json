@@ -1,0 +1,12 @@
+{
+  "links": {
+    "projects": "Projekte",
+    "aboutMe": "Über Mich",
+    "skills": "Skills",
+    "contact": "Kontakt"
+  },
+  "languages": {
+    "german": "Deutsch",
+    "english": "Englisch"
+  }
+}

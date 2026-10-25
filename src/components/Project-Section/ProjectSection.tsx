@@ -13,8 +13,10 @@ import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import { OverlayComp } from "../Overlay-Pattern/OverlayComp";
 import { useEffect, useState } from "react";
 import "./Project.sass";
+import { useTranslation } from "react-i18next";
 
 interface ProjectInfoProps {
+  id: string;
   title: string;
   project_img?: string;
   description: string;
@@ -26,6 +28,7 @@ interface ProjectInfoProps {
 
 const projectInfos: ProjectInfoProps[] = [
   {
+    id: "moneyTracker",
     title: "MoneyTracker",
     project_img: moneytrackerDark,
     description: "Managing in/outcome in a visuall way",
@@ -41,6 +44,7 @@ const projectInfos: ProjectInfoProps[] = [
     source: "https://github.com/Reaper-187/Money-Tracker",
   },
   {
+    id: "chatApp",
     title: "Chat-App",
     project_img: chatDark,
     description: "Chatting with friend/colleagues",
@@ -58,6 +62,7 @@ const projectInfos: ProjectInfoProps[] = [
     source: "https://github.com/Reaper-187/Chat-Messanger",
   },
   {
+    id: "kanbanBoard",
     title: "Kanban-Board",
     project_img: kanbanDark,
     description: "Managing Tasks with your Team",
@@ -75,6 +80,7 @@ const projectInfos: ProjectInfoProps[] = [
     source: "https://github.com/Reaper-187/Kanban-Board",
   },
   {
+    id: "chatAppV2",
     title: "Chat-App-V2",
     project_img: chatLight,
     description: "Chatting with friend/colleagues",
@@ -93,6 +99,7 @@ const projectInfos: ProjectInfoProps[] = [
     source: "https://github.com/Reaper-187/Chat-App-V2",
   },
   {
+    id: "featureFlagTool",
     title: "Feature-Flag-Tool",
     project_img: featureFlagLight,
     description: "be able to controlle your featuers",
@@ -110,6 +117,7 @@ const projectInfos: ProjectInfoProps[] = [
     source: "https://github.com/Reaper-187/Feature-Flag-Tool",
   },
   {
+    id: "urlShortner",
     title: "URL-Shortner",
     project_img: urlShortnerLight,
     description: "cut your long url into a shorter one",
@@ -129,6 +137,7 @@ const projectInfos: ProjectInfoProps[] = [
 ];
 
 export const ProjectSection = () => {
+  const { t } = useTranslation("projects");
   const [selectedProjectImage, setSelectedProjectImage] = useState<
     string | undefined
   >();
@@ -167,31 +176,35 @@ export const ProjectSection = () => {
   return (
     <SectionWrapper sectionId="projects">
       <div className="project-list">
-        <h1>Projects</h1>
+        <h1>{t("heading")}</h1>
         <div className="project-wrapper">
           {projectInfos.map((project, index) => {
-            const delayTime = index * 0.2;
+            const delayTime = index * 0.3;
             const demoOnline = Boolean(project.demoLink);
             return (
               <InViewWrapper
                 delay={delayTime}
                 addClassName="is-visible"
                 threshHold={0.5}
-                key={index}
+                key={project.id}
               >
                 <Card className="project-card">
                   <img
                     src={project.project_img}
-                    alt="Project-Image"
+                    alt={t(`items.${project.id}.title`)}
                     className="project-img"
                     loading="lazy"
                     onClick={handleImgUrl}
                   />
 
                   <div className="project-card-body">
-                    <h3 className="project-title">{project.title}</h3>
+                    <h3 className="project-title">
+                      {t(`items.${project.id}.title`)}
+                    </h3>
 
-                    <p className="project-description">{project.description}</p>
+                    <p className="project-description">
+                      {t(`items.${project.id}.description`)}
+                    </p>
 
                     <div className="project-tech">
                       <TechStack stack={project.techStack} />
@@ -208,13 +221,13 @@ export const ProjectSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Test Demo
+                            {t("buttons.demo")}
                           </a>
                         </Button>
                       ) : (
                         <Button disabled className="project-btn">
                           <project.testDemo className="project-btn-icon" />
-                          upload is in progress...
+                          {t("buttons.uploadPending")}
                         </Button>
                       )}
                       <Button asChild className="project-btn">
@@ -223,7 +236,8 @@ export const ProjectSection = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Github className="project-btn-icon" /> Source
+                          <Github className="project-btn-icon" />
+                          {t("buttons.source")}
                         </a>
                       </Button>
                     </div>

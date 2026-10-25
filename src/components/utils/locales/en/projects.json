@@ -1,0 +1,34 @@
+{
+  "heading": "Projects",
+  "buttons": {
+    "demo": "Test Demo",
+    "source": "Source",
+    "uploadPending": "upload is in progress..."
+  },
+  "items": {
+    "moneyTracker": {
+      "title": "MoneyTracker",
+      "description": "Managing in/outcome in a visual way"
+    },
+    "chatApp": {
+      "title": "Chat-App",
+      "description": "Chatting with friends and colleagues"
+    },
+    "kanbanBoard": {
+      "title": "Kanban-Board",
+      "description": "Managing tasks with your team"
+    },
+    "chatAppV2": {
+      "title": "Chat-App-V2",
+      "description": "Chatting with friends and colleagues"
+    },
+    "featureFlagTool": {
+      "title": "Feature-Flag-Tool",
+      "description": "be able to control your features"
+    },
+    "urlShortner": {
+      "title": "URL-Shortner",
+      "description": "cut your long url into a shorter one"
+    }
+  }
+}

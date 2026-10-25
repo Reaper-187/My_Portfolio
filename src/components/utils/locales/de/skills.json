@@ -1,0 +1,10 @@
+{
+  "heading": "Skills",
+  "intro": "Ich entwickle gerne Interfaces, die klar, intuitiv und durchdacht wirken. Mein Fokus liegt auf modernem Frontend mit React und TypeScript, ergänzt durch Backend-Erfahrung und die Tools, die meinen Workflow effizient machen.",
+  "outro": "Besonders wichtig ist mir sauberer, wartbarer Code und die Bereitschaft, mit jedem Projekt dazuzulernen. Wenn du eine Idee hast, bei der ich mitwirken kann, melde dich gerne.",
+  "categories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  }
+}

@@ -4,14 +4,16 @@ import { FooterSection } from "@/components/Footer-Section/FooterSection";
 import { Hero } from "@/components/Hero-Section/Hero";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { ProjectSection } from "@/components/Project-Section/ProjectSection";
+import { SkillSection } from "@/components/Skill-Section/SkillSection";
 
 export const Portfolio = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <ProjectSection />
       <AboutMe />
+      <ProjectSection />
+      <SkillSection />
       <ContactSection />
       <FooterSection />
     </>

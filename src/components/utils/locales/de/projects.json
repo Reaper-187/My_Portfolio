@@ -1,0 +1,34 @@
+{
+  "heading": "Projekte",
+  "buttons": {
+    "demo": "Demo testen",
+    "source": "Quellcode",
+    "uploadPending": "noch nicht Online..."
+  },
+  "items": {
+    "moneyTracker": {
+      "title": "MoneyTracker",
+      "description": "Einnahmen und Ausgaben visuell verwalten"
+    },
+    "chatApp": {
+      "title": "Chat-App",
+      "description": "Chatten mit Freunden und Kollegen"
+    },
+    "kanbanBoard": {
+      "title": "Kanban-Board",
+      "description": "Aufgaben im Team organisieren"
+    },
+    "chatAppV2": {
+      "title": "Chat-App-V2",
+      "description": "Chatten mit Freunden und Kollegen"
+    },
+    "featureFlagTool": {
+      "title": "Feature-Flag-Tool",
+      "description": "Features gezielt steuern und ausrollen"
+    },
+    "urlShortner": {
+      "title": "URL-Shortner",
+      "description": "Lange URLs in kurze Links umwandeln"
+    }
+  }
+}

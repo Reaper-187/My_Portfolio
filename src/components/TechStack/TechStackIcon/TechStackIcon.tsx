@@ -18,6 +18,7 @@ import prisma from "@/assets/dev_icons/prisma.svg";
 import git from "@/assets/dev_icons/git.svg";
 import postman from "@/assets/dev_icons/postman.svg";
 import jest from "@/assets/dev_icons/jest.svg";
+import vite from "@/assets/dev_icons/vite.svg";
 import { InViewWrapper } from "@/components/Animations/InViewWrapper";
 import "./TechIcon.sass";
 
@@ -36,6 +37,7 @@ export enum TechIcon {
   GIT = "git",
   POSTMAN = "postman",
   JEST = "jest",
+  VITE = "vite",
 }
 
 const iconMap: Record<TechIcon, string> = {
@@ -53,6 +55,7 @@ const iconMap: Record<TechIcon, string> = {
   [TechIcon.GIT]: git,
   [TechIcon.POSTMAN]: postman,
   [TechIcon.JEST]: jest,
+  [TechIcon.VITE]: vite,
 };
 
 const nameMap: Record<TechIcon, string> = {
@@ -70,6 +73,7 @@ const nameMap: Record<TechIcon, string> = {
   [TechIcon.GIT]: "Git",
   [TechIcon.POSTMAN]: "Postman",
   [TechIcon.JEST]: "Jest",
+  [TechIcon.VITE]: "Vite",
 };
 
 const colorMap: Record<TechIcon, string> = {
@@ -87,6 +91,7 @@ const colorMap: Record<TechIcon, string> = {
   [TechIcon.GIT]: "tech-orange-400",
   [TechIcon.POSTMAN]: "tech-orange-300",
   [TechIcon.JEST]: "tech-red-400",
+  [TechIcon.VITE]: "tech-pruple-400",
 };
 
 interface TechStackIconProps {

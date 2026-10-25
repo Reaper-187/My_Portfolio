@@ -5,20 +5,18 @@ import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import socialMediaImg from "../../assets/Cheik_SocialMedia.jpg";
 import myCv from "../../../public/CV_ABDULKADER_CHEIKHKAMIS_DEU.pdf";
 import "./Hero.sass";
+import { useTranslation } from "react-i18next";
 
 const Intro = () => {
+  const { t } = useTranslation("hero");
   return (
     <div className="intro-container">
-      <h1 className="intro-heading">hi Abdul here. 👋</h1>
+      <h1 className="intro-heading">{t("greeting")}</h1>
 
       <div className="intro-text">
+        <p>{t("intro.role")}</p>
         <p>
-          React Developer with a strong focus on frontend, excited by
-          full-stack.
-        </p>
-        <p>
-          My skills are hands-on and project-based. <br /> I aim to build real
-          products in a startup environment and keep growing.
+          {t("intro.approach")} <br /> {t("intro.goal")}
         </p>
       </div>
 

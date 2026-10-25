@@ -11,6 +11,8 @@ import deAbout from "../locales/de/about.json";
 import enAbout from "../locales/en/about.json";
 import deContact from "../locales/de/contact.json";
 import enContact from "../locales/en/contact.json";
+import deSkills from "../locales/de/skills.json";
+import enSkills from "../locales/en/skills.json";
 import deFooter from "../locales/de/footer.json";
 import enFooter from "../locales/en/footer.json";
 
@@ -20,7 +22,7 @@ const resources = {
     hero: enHero,
     projects: enProjects,
     about: enAbout,
-
+    skills: enSkills,
     contact: enContact,
     footer: enFooter,
   },
@@ -29,7 +31,7 @@ const resources = {
     hero: deHero,
     projects: deProjects,
     about: deAbout,
-
+    skills: deSkills,
     contact: deContact,
     footer: deFooter,
   },

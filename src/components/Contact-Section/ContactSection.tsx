@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Mail, MapPin } from "lucide-react";
 import { Card } from "../ui/card";
 import { Label } from "../ui/label";
@@ -7,10 +8,12 @@ import { SectionWrapper } from "../Section-Comp/SectionWrapper";
 import "./Contact.sass";
 
 export const ContactSection = () => {
+  const { t } = useTranslation("contact");
+
   return (
     <SectionWrapper sectionId="contact">
       <div className="contact-section">
-        <h3>Contact information</h3>
+        <h3>{t("heading")}</h3>
         <div className="contact-container">
           <div className="personal-info">
             <InViewWrapper
@@ -25,10 +28,10 @@ export const ContactSection = () => {
                 <Card className="info-card">
                   <Label className="info-label">
                     <Mail color="#4F46E5" />
-                    Email
+                    {t("email.label")}
                   </Label>
-                  <p>abdulkader_cheik@outlook.de</p>
-                  <p>Send me an email anytime</p>
+                  <p>{t("email.address")}</p>
+                  <p>{t("email.note")}</p>
                 </Card>
               </a>
 
@@ -40,10 +43,11 @@ export const ContactSection = () => {
               >
                 <Card className="info-card">
                   <Label className="info-label">
-                    <MapPin color="#4F46E5" /> Location
+                    <MapPin color="#4F46E5" />
+                    {t("location.label")}
                   </Label>
-                  <p>Nürnberg, Germany</p>
-                  <p>Open to remote opportunities</p>
+                  <p>{t("location.city")}</p>
+                  <p>{t("location.note")}</p>
                 </Card>
               </a>
             </InViewWrapper>

@@ -1,0 +1,11 @@
+{
+  "heading": "Skills",
+  "intro": "I enjoy building interfaces that feel clear, intuitive and well thought out. My focus is on modern frontend with React and TypeScript, complemented by backend experience and the tools that make my workflow efficient.",
+
+  "outro": "What matters most to me is clean, maintainable code and the willingness to keep learning with every project. If you have an idea I could contribute to, feel free to reach out.",
+  "categories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  }
+}

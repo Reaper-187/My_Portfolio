@@ -1,0 +1,13 @@
+{
+  "heading": "Contact Info",
+  "email": {
+    "label": "Email",
+    "address": "abdulkader_cheik@outlook.de",
+    "note": "Send me an email anytime"
+  },
+  "location": {
+    "label": "Location",
+    "city": "Nürnberg, Germany",
+    "note": "Open to remote opportunities"
+  }
+}
